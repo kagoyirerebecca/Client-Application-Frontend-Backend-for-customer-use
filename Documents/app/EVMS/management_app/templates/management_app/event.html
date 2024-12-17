@@ -1,0 +1,35 @@
+{%   extends 'management_app/home.html' %}
+
+{% block content %}
+<h1 class="display-4">Events</h1>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Start_date</th>
+      <th scope="col">End_date</th>
+      <th scope="col">Location</th>
+      <th scope="col">Category</th>
+      <th scope="col">Fee_free</th>
+    </tr>
+  </thead>
+  {% for event in events %}
+  <tbody>
+    <tr>
+      <td>{{ event.title }}</td>
+      <td>{{ event.description }}</td>
+      <td>{{ event.start.date}}</td>
+      <td>{{ event.end_date}}</td>
+      <td>{{ event.location}}</td>
+      <td>{{ event.category}}</td>
+      <td>{{ event.fee_free}}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+   
+      
+{% endblock%}
