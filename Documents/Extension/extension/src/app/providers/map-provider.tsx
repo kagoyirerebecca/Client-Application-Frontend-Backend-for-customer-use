@@ -1,16 +1,36 @@
 'use client';
 
-import React, { ReactNode } from 'react';
+import React from 'react';
+import { createContext, useContext, ReactNode } from 'react';
 import mapboxgl from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
 
-// Ensure that the access token is always a string
-mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN || 'your_default_access_token_here';
-
-type MapProviderProps = {
-    children: ReactNode;
+type MapContextType = {
+  mapboxgl: typeof mapboxgl | null;
 };
 
-export const MapProvider: React.FC<MapProviderProps> = ({ children }) => {
-    return <div className="mapbox-container">{children}</div>;
+const MapContext = createContext<MapContextType | null>(null);
+
+export const MapProvider = ({ children }: { children: ReactNode }) => {
+  if (!process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN) {
+    console.error('Mapbox access token is not set');
+    return null;
+  }
+  mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_ACCESS_TOKEN;
+
+  const value = { mapboxgl };
+
+  return (
+    <MapContext.Provider value={value}>
+      {children}
+    </MapContext.Provider>
+  );
 };
+
+export const useMap = () => {
+  const context = useContext(MapContext);
+  if (context === null) {
+    throw new Error('useMap must be used within a MapProvider');
+  }
+  return context;
+};
+

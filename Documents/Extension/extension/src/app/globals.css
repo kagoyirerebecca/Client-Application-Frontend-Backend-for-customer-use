@@ -26,3 +26,97 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
  
+header{
+position:absolute;
+border :1px red solid;
+top:0;
+margin-top: 10px;
+margin-left: 0px;
+width:50%;
+
+
+}
+.left{
+  float:left;
+  margin-left: 30px;
+  margin-top: 20px;
+  border:1px red solid;
+}
+.right{
+  border: 1px red solid;
+  float:right;
+  margin-top: 10px;
+  margin-right: 0px;
+ padding-right:-10px;
+}
+
+output{
+  border: 1px red solid;
+  width:100px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.svg{
+  border: 1px red solid;
+  margin-left: 85px;
+  margin-bottom: 40px;
+}
+
+main{
+  position: absolute;
+  border: 1px red solid;
+  width:50%;
+}
+
+.leftMain{
+  float:left;
+  margin-left: 25px;
+}
+
+.rightMain{
+  margin-right: 25px;
+  float:right;
+  margin-top: 10px;
+}
+
+.img{
+  border: 0px red solid;
+  width: 30px;
+  padding-bottom: 2px;
+}
+
+footer{
+  left:10;
+  margin-top: 500px;
+  position: absolute;
+  border: 0px red solid;
+  border-radius: 15px;
+  text-align: center;
+  width: 109px;
+  height: 26px;
+  background-color: #ffffff;
+  color: #2E6305;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+button{
+  text-align: center;
+}
+
+svg{
+  position: absolute;
+  border: 0px red solid;
+  margin-left: 95px;
+  margin-top: -22px;
+}
+
+input{
+  border:0px red solid;
+  width:20%;
+  margin-left: 8px;
+  padding-left: 5px;
+  border-radius: 15px;
+}
