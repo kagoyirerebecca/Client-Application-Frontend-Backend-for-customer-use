@@ -1,5 +1,6 @@
 import React from 'react';
 import '../globals.css';
+import Image from 'next/image';
 const Header = () => {
   return (
     <header>  
@@ -16,8 +17,16 @@ const Header = () => {
         </svg>
        
        </p>
-       <p><strong>19</strong></p>
-       <p>rainny cloud icon</p>
+       <p><strong>19&deg;</strong></p>
+            <div className="img" >
+                      <Image
+                      src="/images/rainy-cloud.png"  
+                      alt="Description of the image"
+                      width={107}  
+                      height={97} 
+                       layout="responsive" 
+                  />
+                  </div>
        <p><strong>Rain</strong></p>
 
       </div>
